@@ -1,0 +1,300 @@
+body {
+    background: #ffffff url('../images/gaming-pattern.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+    font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* score panel containing star rating, number of moves, timer, pause and replay button */
+.score-panel {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 55%;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.score-panel .stars {
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.star > img {
+  width: 20px;
+  height: 20px;
+  vertical-align: initial;
+}
+
+.float-right {
+  margin: 0 auto;
+  margin-left: 5px;
+  padding: 0;
+  display: inline-block;
+  float: right;
+}
+
+.pause, .restart {
+  cursor: pointer;
+}
+
+/* Decks of randomly shuffled cards */
+.deck {
+  width:60%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 5px #f0803c solid;
+}
+
+/* Gradient color for the deck background */
+.grad {
+  background: #141e30;
+  background: linear-gradient(to right bottom, #141e30, #243b55);
+}
+
+/* Play card */
+.card {
+  float: left;
+  width: 21.6%;
+  padding-bottom: 21.6%;
+  margin: 1.66%;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.card .content {
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.card .content .bg-content{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card .content .front {
+  position: absolute;
+  background-color: #f0803c;
+  border: 5px #f0803c solid;
+  transform: rotateY(0deg);
+}
+
+.card .content .back {
+  background-color: #eaf2e3;
+  border: 10px #eaf2e3 solid;
+  transform: rotateY(180deg);
+}
+
+/* when card is flipped open */
+.card .content .front-open {
+  transform: rotateY(180deg);
+}
+
+.card .content .back-open {
+  transform: rotateY(0deg);
+  cursor: not-allowed;
+}
+
+/* when two cards are matched */
+.card .content .match {
+  background-color: #fff94f;
+  border: 10px #fff94f solid;
+}
+
+/* when two cards are not matched */
+.card .content .wrong {
+  background-color: #f25757;
+  border: 10px #f25757 solid;
+}
+
+/* style for all pop-up modal*/
+.modal {
+	display: none;
+  position: fixed;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff url(../images/gaming-pattern.png);
+}
+
+.modal-body h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.modal-body h3 {
+  text-align: center;
+  color: white;
+}
+
+.modal-body button {
+  background-color: #f25757;
+  color: white;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.button-grp {
+  display: flex;
+}
+
+/* conitnue button for pause modal */
+#continue {
+  background-color: green;
+}
+
+/* design for complete game modal */
+.result {
+  margin: 0;
+  padding: 0;
+}
+
+.result .stars {
+  padding: 0;
+  display: table;
+  margin: 0 auto;
+}
+
+.result .stars li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.result .stars .star > img {
+  width: 70%;
+  height: 70%;
+}
+
+.best-box{
+  margin: 0 auto;
+  border: 1px white solid;
+  width: 60%;
+}
+
+/* character image */
+.superman {
+  background-image: url(../images/superman.png);
+}
+
+.catwoman {
+  background-image: url(../images/catwoman.png);
+}
+
+.baymax {
+  background-image: url(../images/baymax.png);
+}
+
+.wolverine {
+  background-image: url(../images/wolverine.png);
+}
+
+.joker {
+  background-image: url(../images/joker.png);
+}
+
+.batman {
+  background-image: url(../images/batman.png);
+}
+
+.raphael {
+  background-image: url(../images/raphael.png);
+}
+
+.captain-america {
+  background-image: url(../images/captain_america.png);
+}
+
+.colossus {
+  background-image: url(../images/colossus.png);
+}
+
+.cyclops {
+  background-image: url(../images/cyclops.png);
+}
+
+.deadpool {
+  background-image: url(../images/deadpool.png);
+}
+
+.flash {
+  background-image: url(../images/flash.png);
+}
+
+.groot {
+  background-image: url(../images/groot.png);
+}
+
+.harley-quinn {
+  background-image: url(../images/harley_quinn.png);
+}
+
+.hellboy {
+  background-image: url(../images/hellboy.png);
+}
+
+.hulk {
+  background-image: url(../images/hulk.png);
+}
+
+.ironman {
+  background-image: url(../images/ironman.png);
+}
+
+.leonardo {
+  background-image: url(../images/leonardo.png);
+}
+
+.spiderman {
+  background-image: url(../images/spiderman.png);
+}
+
+.robocop {
+  background-image: url(../images/robocop.png);
+}
+
+.thor {
+  background-image: url(../images/thor.png);
+}
+
+.wonderwoman {
+  background-image: url(../images/wonderwoman.png);
+}
+
+.wolverine2 {
+  background-image: url(../images/wolverine2.png);
+}
+
+.storm {
+  background-image: url(../images/storm.png);
+}

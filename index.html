@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Superhero image matching game-->
+<head>
+  <meta charset="utf-8">
+  <title>SuperHero Matching Game</title>
+  <meta name="description" content="This a game that tests your memory and your ability to identify card with same image">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SuperHero Matching Game</h1>
+    </header>
+    <!-- Score panel displaying star rating, number of moves, timer, pause and replay button-->
+    <div class="score-panel">
+      <ul class="stars">
+        <li class="star"><img src="images/star.png" alt="star"></li>
+        <li class="star"><img src="images/star.png" alt="star"></li>
+        <li class="star"><img src="images/star.png" alt="star"></li>
+      </ul>
+      <!-- Number of moves played -->
+      <span class="moves">0</span> moves
+      <!-- Replay icon -->
+      <div class="restart float-right">
+        <i class="fa fa-repeat"></i>
+      </div>
+      <!-- Pause icon -->
+      <div class="pause float-right">
+        <i class="fa fa-pause"></i>
+      </div>
+      <!-- Timer -->
+      <div class="float-right">
+        <span class="timer">0:00</span>
+      </div>
+    </div>
+    <!-- Group of matching cards -->
+    <div class="deck grad">
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="bg-content front"></div>
+          <div class="bg-content back"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Start game modal-->
+  <div id="startModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content grad">
+        <div class="modal-body ">
+          <h2>Welcome to<br><em>Superhero Matching Game</em></h2>
+          <h3>Game Start?</h3>
+          <button type="button" id="start" class="btn btn-default center-block" >Start</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Pause game modal-->
+  <div id="pauseModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content grad">
+        <div class="modal-body ">
+          <h2>Pause</h2>
+          <div class="button-grp">
+            <button type="button" id="continue" class="btn btn-default center-block" >Continue</button>
+            <button type="button" id="new-game" class="btn btn-default center-block" >New Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Complete game modal-->
+  <div id="completeModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content grad">
+        <div class="modal-body ">
+          <h2>Well done! You have completed the game.</h2>
+          <div class="result">
+            <ul class="stars">
+              <li class="star"><img src="images/star.png" alt="star"></li>
+              <li class="star"><img src="images/star.png" alt="star"></li>
+              <li class="star"><img src="images/star.png" alt="star"></li>
+            </ul>
+          </div>
+          <h3><span class="moves"></span> moves</h3>
+          <h3>Time: <span class="time"></span></h3>
+          <div class="best-box">
+            <h3>Best Moves: <span class="best-move"></span></h3>
+            <h3>Best Time: <span class="best-time"></span></h3>
+          </div>
+          <button type="button" id="replay" class="btn btn-default center-block" >Replay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
